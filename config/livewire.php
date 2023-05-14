@@ -14,7 +14,7 @@ return [
     | After changing this item, run: `php artisan livewire:discover`.
     |
     */
-
+   
     'class_namespace' => 'App\\Http\\Livewire',
 
     /*

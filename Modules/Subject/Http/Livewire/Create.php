@@ -10,12 +10,10 @@ class Create extends Component
     public $title;
     public $slug;
     public $theme_id;
-
     public function render()
     {
         return view('subject::livewire.create');
     }
-
 
     public function create() {
         //$this->theme_id;
@@ -24,5 +22,7 @@ class Create extends Component
             'slug' => $this->slug,
             'theme_id' => 1,
         ]);
+
+        $this->emit('testandoqualquermerda');
     }
 }

@@ -10,12 +10,17 @@ class Messages extends Component
 {
 
     public $response;
+    protected $listeners = ['testandoqualquermerda' => 'all'];
     public function render()
     {
         $this->all();
         return view('subject::livewire.messages');
     }
 
+    public function subjectCreated() {
+        dd('ta');
+        $this->all();
+    }
     public function all() {
         //$request = Request::capture();
         //$subject = $request->input('subject');
