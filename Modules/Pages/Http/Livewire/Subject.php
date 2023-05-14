@@ -8,10 +8,6 @@ class Subject extends Component
 {
     public function render()
     {
-        return view('pages::livewire.subject', ['data' => $this->data()]);
-    }
-
-    public function data() {
-        return 'test';
+        return view('pages::livewire.subject');
     }
 }
