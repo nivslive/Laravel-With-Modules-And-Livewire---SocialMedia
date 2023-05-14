@@ -10,7 +10,7 @@ class Messages extends Component
 {
 
     public $response;
-    protected $listeners = ['testandoqualquermerda' => 'all'];
+    protected $listeners = ['subject.messages.all' => 'all'];
     public function render()
     {
         $this->all();

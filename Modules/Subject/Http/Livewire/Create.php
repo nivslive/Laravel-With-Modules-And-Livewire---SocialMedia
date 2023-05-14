@@ -23,6 +23,6 @@ class Create extends Component
             'theme_id' => 1,
         ]);
 
-        $this->emit('testandoqualquermerda');
+        $this->emit('subject.messages.all');
     }
 }
