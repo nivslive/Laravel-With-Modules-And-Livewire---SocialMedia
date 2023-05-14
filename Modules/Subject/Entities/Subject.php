@@ -9,7 +9,7 @@ class Subject extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $fillable = ['title', 'slug', 'theme_id'];
     
     protected static function newFactory()
     {

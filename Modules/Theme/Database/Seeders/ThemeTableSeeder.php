@@ -17,7 +17,7 @@ class ThemeTableSeeder extends Seeder
     {
         Model::unguard();
         $this->call([
-            Theme::newFactory(),
+            Theme::newFactory()->create(),
         ]);
     }
 }

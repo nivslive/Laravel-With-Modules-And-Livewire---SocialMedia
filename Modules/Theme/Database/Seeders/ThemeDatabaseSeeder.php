@@ -4,6 +4,7 @@ namespace Modules\Theme\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Theme\Entities\Theme;
 
 class ThemeDatabaseSeeder extends Seeder
 {
@@ -15,7 +16,12 @@ class ThemeDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
+        
+        Theme::newFactory()->create([
+            'title' => 'test',
+            'slug' => 'test',
+        ]);
+        
         // $this->call("OthersTableSeeder");
     }
 }
