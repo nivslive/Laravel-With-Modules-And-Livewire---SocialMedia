@@ -12,9 +12,14 @@ class PagesController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function theme()
     {
-        return view('pages::index');
+        return view('pages::theme');
+    }
+
+    public function subject()
+    {
+        return view('pages::subject');
     }
 
     /**

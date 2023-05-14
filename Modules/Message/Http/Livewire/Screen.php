@@ -14,7 +14,7 @@ class Screen extends Component
     public $response;
 
     public function __construct() {
-        $this->response = $this->all();
+        $this->all();
     }
     public function render()
     {
@@ -22,8 +22,13 @@ class Screen extends Component
     }
 
     public function all() {
-        $request = Request::capture();
-        $subject = $request->input('subject');
-        return Message::where('subject_id', '=', $subject)->first();
+        try {
+            $request = Request::capture();
+            $subject = $request->input('subject');
+            $this->response = Message::where('subject_id', '=', $subject);
+            return;
+        } catch(\Exception $e) {
+            $this->response = [];
+        }
     }
 }

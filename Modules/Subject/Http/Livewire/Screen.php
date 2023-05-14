@@ -14,26 +14,27 @@ class Screen extends Component
     public string $text = '';
 
     public function __construct() {
-        $this->all = $this->all();
+        $this->all();
     }
     public function render()
     {   
-        $this->response = $this->responseData(); 
+        $this->responseData(); 
         return view('subject::livewire.screen');
     }
 
-    public function all() {
-        return Subject::all();
-    }
     public function responseData() {
         $request = Request::capture();
         $subject = $request->input('subject');
-        return Subject::find((int) $subject);
+        $this->response =  Subject::find((int) $subject);
+        if($this->response === null) {
+             return abort(404);
+        }
+        return;
     }
 
     public function sendMessage() {
         $this->text = '';
         Message::create(['text' => $this->text]);
-        $this->response = $this->responseData();
+        $this->responseData();
     }
 }
