@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
 
+            #foreign theme
+            $table->biginteger('theme_id')->unsigned();
+            $table->foreign('theme_id')->references('id')->on('themes');
+            
             $table->timestamps();
         });
     }

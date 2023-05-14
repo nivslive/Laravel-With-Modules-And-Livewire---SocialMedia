@@ -1,6 +1,10 @@
 @extends('pages::layouts.master')
 
 @section('content')
-    <Livewire:pages::theme> 
-    oi
+    <h1>Hello World</h1>
+
+    <p>
+        <livewire:pages::theme>
+        This view is loaded from module: {!! config('pages.name') !!}
+    </p>
 @endsection
