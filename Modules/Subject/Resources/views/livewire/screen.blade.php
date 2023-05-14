@@ -5,7 +5,7 @@
     {{ $d }}
     @endforeach
 
-
+    {{ $text }} 
     <input type="text" wire:model="text">
-    <button wire:click="iterateTextInData"> test </button>
+    <button wire:click.prevent="iterateTextInData"> test </button>
     </div>
