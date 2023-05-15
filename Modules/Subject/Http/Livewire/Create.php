@@ -23,6 +23,9 @@ class Create extends Component
             'theme_id' => 1,
         ]);
 
+        $this->title = '';
+        $this->slug = '';
+
         $this->emit('subject.messages.all');
     }
 }
