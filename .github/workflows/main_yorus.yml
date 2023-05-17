@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://yorus.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_878cab2b0c364fb2b37fc7125cc17b7f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_c49725227471455c91137b529c41491e }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_4cf553dce22149eab5b223ff6f7901af }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_b0603bdea51e4385b75a7af796b371f0 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: yorus.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_878cab2b0c364fb2b37fc7125cc17b7f }}/staging:${{ github.sha }}
+        tags: yorus.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_4cf553dce22149eab5b223ff6f7901af }}/yorus:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'yorus'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_023eab7f26784ae99636b8c341d2c633 }}
-        images: 'yorus.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_878cab2b0c364fb2b37fc7125cc17b7f }}/staging:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8f8cc69c0dce40cd8ae6aa4687fdf18d }}
+        images: 'yorus.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_4cf553dce22149eab5b223ff6f7901af }}/yorus:${{ github.sha }}'
